@@ -36,6 +36,7 @@ def validate_data(values):
     aren't 7 values, raises ValueError.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 7:
             raise ValueError(
                 f"You need to write exactly 7 values, you provided {len(values)}"
