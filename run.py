@@ -80,7 +80,13 @@ def calculate_warehouse_data(sales_row):
     print("Calculating warehouse data...\n")
     store = SHEET.worksheet("store").get_all_values()
     store_row = store[-1]
-    print(store_row)
+
+    warehouse_data = []
+    for store, sales in zip(store_row, sales_row):
+        warehouse = int(store) - sales
+        warehouse_data.append(warehouse)
+    
+    return warehouse_data
 
 def main():
     """
@@ -90,7 +96,8 @@ def main():
     data = get_sales_data()
     sales_data = [int(num) for num in data]
     update_sales_worksheet(sales_data)
-    calculate_warehouse_data(sales_data)
+    new_warehouse_data = calculate_warehouse_data(sales_data)
+    print(new_warehouse_data)
 
 print("Welcome to NewYork-Fashion Data Automation")
 main()
