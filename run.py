@@ -60,8 +60,6 @@ def validate_data(values):
 
     return True
 
-#Function that insert sales_data as a new entry in sales worksheet over in Google Sheet
-
 def update_sales_worksheet(data):
     """
     Update sales worksheet, add new row with the list data provided
@@ -79,6 +77,18 @@ def update_warehouse_worksheet(data):
     warehouse_worksheet = SHEET.worksheet("warehouse")
     warehouse_worksheet.append_row(data)
     print("warehouse worksheet updated successfully.\n")
+
+#Updating the worksheet
+
+def update_worksheet(data, worksheet):
+    """
+    Receives a list of integers to be inserted into worksheet
+    Update the relevant worksheet with the data provided
+    """
+    print(f"Updating {worksheet} worksheet...\n")
+    worksheet_for_updating = SHEET.worksheet(worksheet)
+    worksheet_for_updating.append_row(data)
+    print(f"{worksheet} worksheet updated successfully\n")
 
 #Defining function to calculate warehouse data
 
@@ -104,9 +114,9 @@ def main():
 
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
+    update_worksheet(sales_data, "sales") 
     new_warehouse_data = calculate_warehouse_data(sales_data)
-    update_warehouse_worksheet(new_warehouse_data)
+    update_worksheet(new_warehouse_data, "warehouse")
 
 print("Welcome to NewYork-Fashion Data Automation")
 main()
