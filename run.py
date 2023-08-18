@@ -71,6 +71,15 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print("Sales worksheet updated successfully.\n")
 
+def update_warehouse_worksheet(data):
+    """
+    Update warehouse worksheet, add new row with the list data provided
+    """
+    print("Updating sales worksheet...\n")
+    warehouse_worksheet = SHEET.worksheet("warehouse")
+    warehouse_worksheet.append_row(data)
+    print("warehouse worksheet updated successfully.\n")
+
 #Defining function to calculate warehouse data
 
 def calculate_warehouse_data(sales_row):
@@ -97,7 +106,7 @@ def main():
     sales_data = [int(num) for num in data]
     update_sales_worksheet(sales_data)
     new_warehouse_data = calculate_warehouse_data(sales_data)
-    print(new_warehouse_data)
+    update_warehouse_worksheet(new_warehouse_data)
 
 print("Welcome to NewYork-Fashion Data Automation")
 main()
