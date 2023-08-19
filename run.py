@@ -74,7 +74,7 @@ def update_worksheet(data, worksheet):
 
 #Defining function to calculate warehouse data
 
-def calculate_warehouse_data(sales_row):
+def calc_warehouse_data(sales_row):
     """
     Compare sales with store and calculate the warehouse for each item type.
     """
@@ -96,14 +96,29 @@ def last_5_entries_sales():
     as a list of lists.
     """
     sales = SHEET.worksheet("sales")
-    # column = sales.col_values(3)
-    # print(column)
 
     columns = []
-    for ind in range(1, 7):
+    for ind in range(1, 8):
         column = sales.col_values(ind)
         columns.append(column[-5:])
-    pprint(columns)
+    
+    return columns
+
+def calc_stock_data(data):
+    """
+    Calculate the average stock for each item type, adding 10%
+    """
+
+    print("Calculating stock data ...\n")
+    new_stock_data = []
+
+    for column in data:
+        int_column = [int(num) for num in column]
+        average = sum(int_column) / len(int_column)
+        stock_num = average * 1.1
+        new_stock_data.append(round(stock_num))
+
+    return new_stock_data
 
 def main():
     """
@@ -113,10 +128,12 @@ def main():
     data = get_sales_data()
     sales_data = [int(num) for num in data]
     update_worksheet(sales_data, "sales") 
-    new_warehouse_data = calculate_warehouse_data(sales_data)
+    new_warehouse_data = calc_warehouse_data(sales_data)
     update_worksheet(new_warehouse_data, "warehouse")
+    sales_columns = last_5_entries_sales()
+    stock_data = calc_stock_data(sales_columns)
+    update_worksheet(stock_data, "store")
 
 print("Welcome to NewYork-Fashion Data Automation")
-# main()
+main()
 
-last_5_entries_sales()
