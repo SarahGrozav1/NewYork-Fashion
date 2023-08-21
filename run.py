@@ -1,5 +1,11 @@
 import gspread
 from google.oauth2.service_account import Credentials 
+import pyfiglet
+import colorama
+
+result = pyfiglet.figlet_format("NewYork  Fashion Store",justify="center")
+print(result)
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -32,7 +38,8 @@ def get_sales_data():
 #for data if the input provided is not valid
 
         if validate_data(sales_data):
-            print("Data is valid")
+            print(colorama.Fore.GREEN + "Data is valid")
+            print(colorama.Style.RESET_ALL)
             break
 
     return sales_data
@@ -48,11 +55,10 @@ def validate_data(values):
     try:
         [int(value) for value in values]
         if len(values) != 7:
-            raise ValueError(
-                f"You need to write exactly 7 values, you provided {len(values)}"
-            )
+            raise ValueError(f"You need to write exactly 7 values, you provided {len(values)}")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(colorama.Fore.RED + f"Invalid data: {e}, please try again.\n")
+        print(colorama.Style.RESET_ALL)
         return False
 
 #If there are no errors, it will return True
@@ -69,7 +75,8 @@ def update_worksheet(data, worksheet):
     print(f"Updating {worksheet} worksheet...\n")
     worksheet_for_updating = SHEET.worksheet(worksheet)
     worksheet_for_updating.append_row(data)
-    print(f"{worksheet} worksheet updated successfully\n")
+    print(colorama.Fore.GREEN + f"{worksheet} worksheet updated successfully\n")
+    print(colorama.Style.RESET_ALL)
 
 #Defining function to calculate warehouse data
 
