@@ -1,9 +1,9 @@
 import gspread
-from google.oauth2.service_account import Credentials 
+from google.oauth2.service_account import Credentials
 import pyfiglet
 import colorama
 
-result = pyfiglet.figlet_format("NewYork  Fashion Store",justify="center")
+result = pyfiglet.figlet_format("NewYork  Fashion Store", justify="center")
 print(result)
 
 
@@ -11,14 +11,15 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('new_york_fashion')
 
-#Create function to get data string from user
+# Create function to get data string from user
+
 
 def get_sales_data():
     """
@@ -30,12 +31,12 @@ def get_sales_data():
         print("Example: 25,35,45,57,50,30,16\n")
 
         data_str = input("Enter your data here:\n")
-    
-        sales_data = data_str.split(",")
-        
 
-#Adjust get_sales_data function so that it repeat its request
-#for data if the input provided is not valid
+        sales_data = data_str.split(",")
+
+
+# Adjust get_sales_data function so that it repeat its request
+# for data if the input provided is not valid
 
         if validate_data(sales_data):
             print(colorama.Fore.GREEN + "Data is valid")
@@ -44,7 +45,8 @@ def get_sales_data():
 
     return sales_data
 
-#Function to handle the validation
+# Function to handle the validation
+
 
 def validate_data(values):
     """
@@ -55,17 +57,19 @@ def validate_data(values):
     try:
         [int(value) for value in values]
         if len(values) != 7:
-            raise ValueError(f"You need to write exactly 7 values, you provided {len(values)}")
+            raise ValueError(
+             f"You need to write exactly 7 values, you provided {len(values)}")
     except ValueError as e:
         print(colorama.Fore.RED + f"Invalid data: {e}, please try again.\n")
         print(colorama.Style.RESET_ALL)
         return False
 
-#If there are no errors, it will return True
+# If there are no errors, it will return True
 
     return True
 
-#Updating the worksheet
+# Updating the worksheet
+
 
 def update_worksheet(data, worksheet):
     """
@@ -75,10 +79,12 @@ def update_worksheet(data, worksheet):
     print(f"Updating {worksheet} worksheet...\n")
     worksheet_for_updating = SHEET.worksheet(worksheet)
     worksheet_for_updating.append_row(data)
-    print(colorama.Fore.GREEN + f"{worksheet} worksheet updated successfully\n")
+    print(colorama.Fore.GREEN +
+          f"{worksheet} worksheet updated successfully\n")
     print(colorama.Style.RESET_ALL)
 
-#Defining function to calculate warehouse data
+# Defining function to calculate warehouse data
+
 
 def calc_warehouse_data(sales_row):
     """
@@ -92,8 +98,9 @@ def calc_warehouse_data(sales_row):
     for store, sales in zip(store_row, sales_row):
         warehouse = int(store) - sales
         warehouse_data.append(warehouse)
-    
+
     return warehouse_data
+
 
 def last_5_entries_sales():
     """
@@ -107,8 +114,9 @@ def last_5_entries_sales():
     for ind in range(1, 8):
         column = sales.col_values(ind)
         columns.append(column[-5:])
-    
+
     return columns
+
 
 def calc_stock_data(data):
     """
@@ -126,6 +134,7 @@ def calc_stock_data(data):
 
     return new_stock_data
 
+
 def main():
     """
     Run all program functions
@@ -133,13 +142,14 @@ def main():
 
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_worksheet(sales_data, "sales") 
+    update_worksheet(sales_data, "sales")
     new_warehouse_data = calc_warehouse_data(sales_data)
     update_worksheet(new_warehouse_data, "warehouse")
     sales_columns = last_5_entries_sales()
     stock_data = calc_stock_data(sales_columns)
     update_worksheet(stock_data, "store")
 
-print("Welcome to NewYork-Fashion Data Automation")
-main()
 
+print(colorama.Fore.YELLOW + "Welcome to NewYork-Fashion Data Automation")
+print(colorama.Style.RESET_ALL)
+main()
