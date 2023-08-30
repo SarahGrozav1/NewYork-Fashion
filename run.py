@@ -20,7 +20,6 @@ SHEET = GSPREAD_CLIENT.open('new_york_fashion')
 
 # Create function to get data string from user
 
-
 def get_sales_data():
     """
     Get sales figures input from the user
