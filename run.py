@@ -117,21 +117,21 @@ def last_5_entries_sales():
     return columns
 
 
-def calc_stock_data(data):
+def calc_store_data(data):
     """
-    Calculate the average stock for each item type, adding 10%
+    Calculate the average store for each item type, adding 10%
     """
 
-    print("Calculating stock data ...\n")
-    new_stock_data = []
+    print("Calculating store data ...\n")
+    new_store_data = []
 
     for column in data:
         int_column = [int(num) for num in column]
         average = sum(int_column) / len(int_column)
-        stock_num = average * 1.1
-        new_stock_data.append(round(stock_num))
+        store_num = average * 1.1
+        new_store_data.append(round(store_num))
 
-    return new_stock_data
+    return new_store_data
 
 
 def main():
@@ -145,10 +145,13 @@ def main():
     new_warehouse_data = calc_warehouse_data(sales_data)
     update_worksheet(new_warehouse_data, "warehouse")
     sales_columns = last_5_entries_sales()
-    stock_data = calc_stock_data(sales_columns)
-    update_worksheet(stock_data, "store")
+    store_data = calc_store_data(sales_columns)
+    update_worksheet(store_data, "store")
 
 
 print(colorama.Fore.YELLOW + "Welcome to NewYork-Fashion Data Automation")
 print(colorama.Style.RESET_ALL)
-main()
+store_data = main()
+print("Have a nice day!\n")
+   
+
