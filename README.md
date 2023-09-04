@@ -39,6 +39,8 @@ USER STORY
 As a User, I would like to be able to manage my store so that I can easily keep track of what clothes have been selled.
 `
 
+IMPLEMENTATION
+
 Through this app the user can keep track of his store. When he write in the app the numbers the user can see every sales numbers,  warehouse numbers and store numbers already calculated.
 
 USER STORY
@@ -46,6 +48,8 @@ USER STORY
 `
 As a User, I would like to have an error message in red color if I have made an mistake in my numbers.
 `
+
+IMPLEMENTATION
 
 When the user don't write enough numbers, separated bu commas or if he will write a letter the app will give him an error message in red colour so that the user could see better that there is a problem.
 
@@ -57,6 +61,8 @@ USER STORY
 As a user, after an error message I want to be able to write again the numbers without closeing and reopening the app again.
 `
 
+IMPLEMENTATION
+
 When the user will receive an error message , he can start again to write the numbers and he dont need to start the app again or to refresh the app.
 
 ![sales data](documents/sales-data-again.png)
@@ -67,6 +73,8 @@ USER STORY
 As a user, I would like to receive a message in green colour that the spreadsheets have updated succesfully.
 `
 
+IMPLEMENTATION
+
 After the user added the sales numbers the user will see a green message for every spreadsheet that have been successfuly updated.
 
 ![green message](documents/green-message.png)
@@ -74,3 +82,13 @@ After the user added the sales numbers the user will see a green message for eve
 ## Logical Flow
 
 ![Logical Flow](documents/logical-flow.png)
+
+
+## Technologies
+
+* Python - Python was the main language used to build the application.
+
+* Screen-o-matic - This was used to screen record the Gif for the readme. It was originally an MP4 and ezgif.com was used to convert to GIF format.
+
+* Google Spreadsheets
+
