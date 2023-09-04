@@ -59,7 +59,7 @@ As a user, after an error message I want to be able to write again the numbers w
 
 When the user will receive an error message , he can start again to write the numbers and he dont need to start the app again or to refresh the app.
 
-![sales data](documents/sales%20data%20again.png)
+![sales data](documents/sales-data-again.png)
 
 USER STORY
 
@@ -69,5 +69,8 @@ As a user, I would like to receive a message in green colour that the spreadshee
 
 After the user added the sales numbers the user will see a green message for every spreadsheet that have been successfuly updated.
 
-![green message](documents/green%20message.png)
+![green message](documents/green-message.png)
 
+## Logical Flow
+
+![Logical Flow](documents/logical-flow.png)
