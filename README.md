@@ -137,3 +137,16 @@ The below steps were followed to deploy this project to Heroku:
 * Navigate to "Deploy". Set the deployment method to Github and enter repository name and connect.
 * Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
 * The app will now be deployed to heroku
+
+## Credits
+
+### Code
+
+* W3C tutorials were used as a reference for python functions throughout this project.
+
+* I have used as a reference from this course
+
+* I thank the mentor and the Tutor Assistants for their help and time.
+
+* I thank the family for their support
+
