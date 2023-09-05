@@ -108,3 +108,32 @@ All python code was ran through pep8online.com validator and any warnings or err
 
 ![Lighthouse](documents/lighthouse.png)
 
+### Bugs and Fixes
+
+When I tested my code through Pep8 Validation, it gave me an error that one of the lines is too long, so I made it shorter and I didn't have any other errors.
+
+## Deployment
+
+### Version Control
+The site was created using the Codeanywhere editor.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m â€œcommit messageâ€``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+
+### Heroku Deployment
+
+The below steps were followed to deploy this project to Heroku:
+
+* Go to Heroku and click "New" to create a new app.
+* Choose an app name and region region, click "Create app".
+* Go to "Settings" and navigate to Config Vars. Add the following config variables:
+    * PORT : 8000
+* Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
+* Navigate to "Deploy". Set the deployment method to Github and enter repository name and connect.
+* Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
+* The app will now be deployed to heroku
