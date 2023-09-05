@@ -92,3 +92,19 @@ After the user added the sales numbers the user will see a green message for eve
 
 * Google Spreadsheets
 
+## Testing
+
+### Functional Testing
+
+Below are the test execution of positive functional tests:
+
+### Pep8 Validation
+
+All python code was ran through pep8online.com validator and any warnings or errors were fixed. Code then validated successfully.
+
+![Pep8 Validation](documents/validate.png)
+
+### Lighthouse
+
+![Lighthouse](documents/lighthouse.png)
+
