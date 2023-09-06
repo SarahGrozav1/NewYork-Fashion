@@ -77,7 +77,7 @@ IMPLEMENTATION
 
 After the user added the sales numbers the user will see a green message for every spreadsheet that have been successfuly updated.
 
-![green message](documents/green-message.png)
+![green message](documents/green-messages.png)
 
 ## Logical Flow
 
