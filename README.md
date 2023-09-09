@@ -2,8 +2,6 @@
 
 ![GIF of App](documents/gif.gif)
 
-TESTING
-
 ## Introduction
 
 This project was created in order for small businesses to easily keep track of their clothes in store, in warehouse and how many have been selled.

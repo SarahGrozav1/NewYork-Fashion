@@ -1,10 +1,11 @@
 import gspread
+import pandas as pd
 from google.oauth2.service_account import Credentials
 import pyfiglet
 import colorama
+import sys
 
-result = pyfiglet.figlet_format("NewYork  Fashion Store", justify="center")
-print(result)
+
 
 
 SCOPE = [
@@ -25,6 +26,7 @@ def get_sales_data():
     Get sales figures input from the user
     """
     while True:
+        print()
         print("Please enter sales data from the last market.")
         print("Data should be seven numbers, separated by commas.")
         print("Example: 25,35,45,57,50,30,16\n")
@@ -45,8 +47,6 @@ def get_sales_data():
     return sales_data
 
 # Function to handle the validation
-
-
 def validate_data(values):
     """
     Converts all string values into integers.
@@ -64,12 +64,9 @@ def validate_data(values):
         return False
 
 # If there are no errors, it will return True
-
     return True
 
 # Updating the worksheet
-
-
 def update_worksheet(data, worksheet):
     """
     Receives a list of integers to be inserted into worksheet
@@ -83,8 +80,6 @@ def update_worksheet(data, worksheet):
     print(colorama.Style.RESET_ALL)
 
 # Defining function to calculate warehouse data
-
-
 def calc_warehouse_data(sales_row):
     """
     Compare sales with store and calculate the warehouse for each item type.
@@ -134,11 +129,10 @@ def calc_store_data(data):
     return new_store_data
 
 
-def main():
+def run_sales_data():
     """
     Run all program functions
     """
-
     data = get_sales_data()
     sales_data = [int(num) for num in data]
     update_worksheet(sales_data, "sales")
@@ -148,10 +142,74 @@ def main():
     store_data = calc_store_data(sales_columns)
     update_worksheet(store_data, "store")
 
+# Welcome message 
+def welcome_message():
+    result = pyfiglet.figlet_format("NewYork  Fashion Store", justify="center")
+    print(result)
+    print(colorama.Fore.YELLOW + "Welcome to NewYork-Fashion Data Automation")
+    print(colorama.Style.RESET_ALL)
 
-print(colorama.Fore.YELLOW + "Welcome to NewYork-Fashion Data Automation")
-print(colorama.Style.RESET_ALL)
-store_data = main()
+# Here its the menu for the app
+
+def main_menu():
+    print("---------------")
+    print("PLEASE PICK AN OPTION:")
+    print()
+    print("1. Instructions")
+    print("2. View Data")
+    print("3. Add Sales")
+    print("4. Exit the App")
+    print("---------------")
+
+    selection = int(input("Chose an option: "))
+    
+    if selection == 1:
+        instr()
+     
+    elif selection == 2:
+        view_data()
+      
+    elif selection == 3:
+        add_sales()
+    
+    elif selection == 4:
+        print("You choose to exit the app. Goodbye!")
+       
+        sys.exit()
+    else:
+        print("Invalid choice. Enter 1-4\n")
+        main_menu()
+
+def main():
+    welcome_message()
+    main_menu()
+  
+    #user input
+    options = ("y", "n")
+    while True:
+        print("-------------------------------")
+        print("Do you want to add sales data?")
+        print("Please answer with 'y' for yes and 'n' for no." )
+        print("If you choose 'y' you will be able to add sales data.")
+        print("If you choose 'n' you will be able to see menu of the app again.")
+        print("-------------------------------")
+
+        user_input = input("Your answer: ")
+        if user_input in options:
+            break
+        else:
+            print('Option not valid! Please answer with y/n')
+
+# If user will type 'y', the app will ask him to type the sales numbers
+    if user_input == "y":
+        get_sales_data()
+
+# I user will type 'n', the app will show the menu again
+    elif user_input == "n":
+        main_menu()
+
+store_data = main()        
 print("Have a nice day!\n")
-   
+
+
 
