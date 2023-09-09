@@ -216,6 +216,8 @@ def view_data():
         print("Invalid choice. Enter 1-3\n")
         view_data()
 
+def add_sales():   
+    run_sales_data()
 
 def main():
     welcome_message()
