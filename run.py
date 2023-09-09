@@ -180,6 +180,13 @@ def main_menu():
         print("Invalid choice. Enter 1-4\n")
         main_menu()
 
+def instr():
+    print("INSTRUCTIONS:")
+    print()
+    print("From the main, if you want to view a data, you can input sales, warehouse or store and it will show the values for each area. To add sales data for the past 7 days, select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
+
+
+
 def main():
     welcome_message()
     main_menu()
