@@ -185,6 +185,36 @@ def instr():
     print()
     print("From the main, if you want to view a data, you can input sales, warehouse or store and it will show the values for each area. To add sales data for the past 7 days, select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
 
+def view_data():
+    
+    print("Please Pick An Option: ")
+    print("1. Sales Data")
+    print("2. Warehouse Data")
+    print("3. Store Data")
+    print("------------------")
+
+    selection = int(input("Chose an option: "))
+    if selection == 1:
+        worksheet = SHEET.worksheet('sales')
+        data = pd.DataFrame(worksheet.get_all_records())
+        print(data.shape)
+        print(data.head)
+        print(data.columns)
+    elif selection == 2:
+        worksheet = SHEET.worksheet('warehouse')
+        data = pd.DataFrame(worksheet.get_all_records())
+        print(data.shape)
+        print(data.head)
+        print(data.columns)
+    elif selection == 3:
+        worksheet = SHEET.worksheet('store')
+        data = pd.DataFrame(worksheet.get_all_records())
+        print(data.shape)
+        print(data.head)
+        print(data.columns)
+    else:
+        print("Invalid choice. Enter 1-3\n")
+        view_data()
 
 
 def main():
