@@ -96,6 +96,8 @@ After the user added the sales numbers the user will see a green message for eve
 
 Below are the test execution of positive functional tests:
 
+When the user will acces the app, he will have some welcome message and after the welcome message will be a menu with 4 options. First option is for instructions, second options is for user to see the spreadsheet. The third option
+
 ### Pep8 Validation
 
 All python code was ran through pep8online.com validator and any warnings or errors were fixed. Code then validated successfully.

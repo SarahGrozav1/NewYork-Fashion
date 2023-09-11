@@ -174,10 +174,10 @@ def main_menu():
     
     elif selection == 4:
         print("You choose to exit the app. Goodbye!")
-       
         sys.exit()
     else:
-        print("Invalid choice. Enter 1-4\n")
+        print(colorama.Fore.RED + "Invalid choice. Enter 1-4\n")
+        print(colorama.Style.RESET_ALL)
         main_menu()
 
 def instr():
@@ -200,24 +200,32 @@ def view_data():
         print(data.shape)
         print(data.head)
         print(data.columns)
+        main_menu()
+
     elif selection == 2:
         worksheet = SHEET.worksheet('warehouse')
         data = pd.DataFrame(worksheet.get_all_records())
         print(data.shape)
         print(data.head)
         print(data.columns)
+        main_menu()
+
     elif selection == 3:
         worksheet = SHEET.worksheet('store')
         data = pd.DataFrame(worksheet.get_all_records())
         print(data.shape)
         print(data.head)
         print(data.columns)
-    else:
-        print("Invalid choice. Enter 1-3\n")
-        view_data()
+        main_menu()
 
+    else:
+        print(colorama.Fore.RED +"Invalid choice. Enter 1-3\n")
+        print(colorama.Style.RESET_ALL)
+        view_data()
+        
 def add_sales():   
     run_sales_data()
+    main_menu()
 
 def main():
     welcome_message()
@@ -237,7 +245,8 @@ def main():
         if user_input in options:
             break
         else:
-            print('Option not valid! Please answer with y/n')
+            print(colorama.Fore.RED +'Option not valid! Please answer with y/n')
+            print(colorama.Style.RESET_ALL)
 
 # If user will type 'y', the app will ask him to type the sales numbers
     if user_input == "y":
