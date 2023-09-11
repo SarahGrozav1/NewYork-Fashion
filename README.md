@@ -96,7 +96,26 @@ After the user added the sales numbers the user will see a green message for eve
 
 Below are the test execution of positive functional tests:
 
-When the user will acces the app, he will have some welcome message and after the welcome message will be a menu with 4 options. First option is for instructions, second options is for user to see the spreadsheet. The third option
+When the user will acces the app, he will have some welcome message and after the welcome message will be a menu with 4 options.
+![Welcome message](documents/welcome-message.png)
+ First option is for instructions. After the instructions the user will have to choose again if he want to add sales data or to see the menu again.
+ ![Instructions](documents/instructions.png)
+The second option from the menu is for the user to see the sheet. If he choose the second option, he will have to choose again, but this time the user will have to choose witch file from the sheet wants to see.
+![Second option](documents/view-data.png)
+When the user will choose one of this 3 options, he will be able to see a table .
+![Table](documents/sheet.png)
+Under the table the menu will appear again.
+![Menu again](documents/menu-again.png)
+
+If the user will choose the third option from the menu, he wull be able to add sales data.
+![Add sales data](documents/ad-data.png)
+When the user add sales data will be informed that everything eas succesfully updated.
+![Updated](documents/succesfully-updated.png)
+
+After the update the menu will appear again.
+
+The fourth option is for exiting the app. I the user will choose this option will have a goodbye message.
+![Goodbye message](documents/goodbye-message.png)
 
 ### Pep8 Validation
 
