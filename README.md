@@ -100,7 +100,7 @@ When the user will acces the app, he will have some welcome message and after th
 ![Welcome message](documents/welcome-message.png)
  First option is for instructions. After the instructions the user will have to choose again if he want to add sales data or to see the menu again.
  ![Instructions](documents/instructions.png)
-The second option from the menu is for the user to see the sheet. If he choose the second option, he will have to choose again, but this time the user will have to choose witch file from the sheet wants to see.
+The second option from the menu is for the user to see the Google Spreadsheet. If he choose the second option, he will have to choose again, but this time the user will have to choose witch sheet wants to see.
 ![Second option](documents/view-data.png)
 When the user will choose one of this 3 options, he will be able to see a table .
 ![Table](documents/sheet.png)
