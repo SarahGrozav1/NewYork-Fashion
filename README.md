@@ -90,6 +90,8 @@ After the user added the sales numbers the user will see a green message for eve
 
 * Google Spreadsheets
 
+* Ezgif.com - I have used this to covert the video into gif
+
 ## Testing
 
 ### Functional Testing
