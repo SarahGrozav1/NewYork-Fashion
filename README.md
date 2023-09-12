@@ -49,7 +49,7 @@ As a User, I would like to have an error message in red color if I have made an 
 
 IMPLEMENTATION
 
-When the user don't write enough numbers, separated bu commas or if he will write a letter the app will give him an error message in red colour so that the user could see better that there is a problem.
+When the user don't write enough numbers, separated bu commas or if he will write a letter, or didnt choose a number from the menu, the app will give him an error message in red colour so that the user could see better that there is a problem.
 
 ![Error message](documents/error.png)
 
@@ -79,7 +79,7 @@ After the user added the sales numbers the user will see a green message for eve
 
 ## Logical Flow
 
-![Logical Flow](documents/logical-flow.png)
+![Logical Flow](documents/flow.png)
 
 
 ## Technologies
