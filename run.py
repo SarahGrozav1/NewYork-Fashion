@@ -175,10 +175,10 @@ def main_menu():
     print("---------------")
 
     try:
-       selection = int(input("Chose an option: "))
-    except:
-       print(colorama.Fore.RED + "This is no valid option!")
-       print(colorama.Style.RESET_ALL)
+        selection = int(input("Chose an option: "))
+    except Exception:
+        print(colorama.Fore.RED + "This is no valid option!")
+        print(colorama.Style.RESET_ALL)
 
     if selection == 1:
         instr()
@@ -222,8 +222,8 @@ def view_data():
     print("------------------")
 
     try:
-       selection = int(input("Chose an option: "))
-    except:
+        selection = int(input("Chose an option: "))
+    except Exception:
         print(colorama.Fore.RED + "This is no valid option!")
         print(colorama.Style.RESET_ALL)
         view_data()
@@ -266,6 +266,7 @@ def add_sales():
     """
     run_sales_data()
     main_menu()
+
 
 def main():
     """
