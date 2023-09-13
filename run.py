@@ -292,7 +292,8 @@ def main():
 
     # If user will type 'y', the app will ask him to type the sales numbers
     if user_input == "y":
-        get_sales_data()
+        run_sales_data()
+        main_menu()
 
     # I user will type 'n', the app will show the menu again
     elif user_input == "n":
