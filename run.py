@@ -183,7 +183,9 @@ def main_menu():
 def instr():
     print("INSTRUCTIONS:")
     print()
-    print("From the main, if you want to view a data, you can input sales, warehouse or store and it will show the values for each area. To add sales data for the past 7 days, select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
+    print("From the main, if you want to view a data, you can input sales, warehouse or store")
+    print("and it will show the values for each area. To add sales data for the past 7 days,")
+    print("select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
 
 def view_data():
     
@@ -248,15 +250,15 @@ def main():
             print(colorama.Fore.RED +'Option not valid! Please answer with y/n')
             print(colorama.Style.RESET_ALL)
 
-# If user will type 'y', the app will ask him to type the sales numbers
+    # If user will type 'y', the app will ask him to type the sales numbers
     if user_input == "y":
         get_sales_data()
 
-# I user will type 'n', the app will show the menu again
+    # I user will type 'n', the app will show the menu again
     elif user_input == "n":
         main_menu()
 
-store_data = main()        
+main()        
 print("Have a nice day!\n")
 
 
