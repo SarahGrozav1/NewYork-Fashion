@@ -5,9 +5,6 @@ import pyfiglet
 import colorama
 import sys
 
-
-
-
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -20,6 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('new_york_fashion')
 
 # Create function to get data string from user
+
 
 def get_sales_data():
     """
@@ -47,6 +45,8 @@ def get_sales_data():
     return sales_data
 
 # Function to handle the validation
+
+
 def validate_data(values):
     """
     Converts all string values into integers.
@@ -67,6 +67,8 @@ def validate_data(values):
     return True
 
 # Updating the worksheet
+
+
 def update_worksheet(data, worksheet):
     """
     Receives a list of integers to be inserted into worksheet
@@ -80,6 +82,8 @@ def update_worksheet(data, worksheet):
     print(colorama.Style.RESET_ALL)
 
 # Defining function to calculate warehouse data
+
+
 def calc_warehouse_data(sales_row):
     """
     Compare sales with store and calculate the warehouse for each item type.
@@ -142,7 +146,9 @@ def run_sales_data():
     store_data = calc_store_data(sales_columns)
     update_worksheet(store_data, "store")
 
-# Welcome message 
+# Welcome message
+
+
 def welcome_message():
     """
     Welcome message for the user
@@ -153,6 +159,7 @@ def welcome_message():
     print(colorama.Style.RESET_ALL)
 
 # Here its the menu for the app
+
 
 def main_menu():
     """
@@ -167,17 +174,18 @@ def main_menu():
     print("4. Exit the App")
     print("---------------")
 
-    selection = int(input("Chose an option: "))
-    
+    try:
+       selection = int(input("Chose an option: "))
+    except:
+       print(colorama.Fore.RED + "This is no valid option!")
+       print(colorama.Style.RESET_ALL)
+
     if selection == 1:
         instr()
-     
     elif selection == 2:
         view_data()
-      
     elif selection == 3:
         add_sales()
-    
     elif selection == 4:
         print("You choose to exit the app. Goodbye!")
         sys.exit()
@@ -186,7 +194,8 @@ def main_menu():
         print(colorama.Style.RESET_ALL)
         main_menu()
 
-#Instructions of the app so that the user know how to use it
+# Instructions of the app so that the user know how to use it
+
 
 def instr():
     """
@@ -194,11 +203,14 @@ def instr():
     """
     print("INSTRUCTIONS:")
     print()
-    print("From the main, if you want to view a data, you can input sales, warehouse or store")
-    print("and it will show the values for each area. To add sales data for the past 7 days,")
-    print("select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
+    print("From the main, if you want to view a data, you can input sales,")
+    print(" warehouse or store and it will show the values for each area.")
+    print(" To add sales data for the past 7 days, select 3 from the menu and")
+    print(" put your sales figures in for each date, followed by a comma.\n")
 
-#Function for user so that the user can see which sheet he wants
+# Function for user so that the user can see which sheet he wants
+
+
 def view_data():
     """
     Creating view_data function so that the user can see which sheet he wants
@@ -209,7 +221,13 @@ def view_data():
     print("3. Store Data")
     print("------------------")
 
-    selection = int(input("Chose an option: "))
+    try:
+       selection = int(input("Chose an option: "))
+    except:
+        print(colorama.Fore.RED + "This is no valid option!")
+        print(colorama.Style.RESET_ALL)
+        view_data()
+
     if selection == 1:
         worksheet = SHEET.worksheet('sales')
         data = pd.DataFrame(worksheet.get_all_records())
@@ -235,12 +253,14 @@ def view_data():
         main_menu()
 
     else:
-        print(colorama.Fore.RED +"Invalid choice. Enter 1-3\n")
+        print(colorama.Fore.RED + "Invalid choice. Enter 1-3\n")
         print(colorama.Style.RESET_ALL)
         view_data()
 
-#If user will choose option 3 will be able to add sales data       
-def add_sales():   
+# If user will choose option 3 will be able to add sales data
+
+
+def add_sales():
     """
     Calling functions so that the user could add sales data
     """
@@ -253,22 +273,21 @@ def main():
     """
     welcome_message()
     main_menu()
-  
-    #user input
+    # User input
     options = ("y", "n")
     while True:
         print("-------------------------------")
         print("Do you want to add sales data?")
-        print("Please answer with 'y' for yes and 'n' for no." )
+        print("Please answer with 'y' for yes and 'n' for no.")
         print("If you choose 'y' you will be able to add sales data.")
-        print("If you choose 'n' you will be able to see menu of the app again.")
+        print("If you choose 'n' you will be able to see menu of the again.")
         print("-------------------------------")
 
         user_input = input("Your answer: ")
         if user_input in options:
             break
         else:
-            print(colorama.Fore.RED +'Option not valid! Please answer with y/n')
+            print(colorama.Fore.RED + 'Option not valid!')
             print(colorama.Style.RESET_ALL)
 
     # If user will type 'y', the app will ask him to type the sales numbers
@@ -279,8 +298,6 @@ def main():
     elif user_input == "n":
         main_menu()
 
-main()        
+
+main()
 print("Have a nice day!\n")
-
-
-
