@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This project was created in order for small businesses to easily keep track of their clothes in store, in warehouse and how many have been selled.
+This project was created in order for small businesses to easily keep track of their clothes in store, in warehouse and how many have been sold.
 
 ### Site Goals
 
@@ -16,14 +16,14 @@ This project was created in order for small businesses to easily keep track of t
 
 ### User Stories
 
-* As a User, I would like to be able to manage my store so that I can easily keep track of what clothes have been selled.
+* As a User, I would like to be able to manage my store so that I can easily keep track of what clothes have been sold.
 * As a User, I would like to have an error message in red color if I have made an mistake in my numbers.
-* As a user, after an error message I want to be able to write again the numbers without closeing and reopening the app again.
-* As a user, I would like to receive a message in green colour that the spreadsheets have updated succesfully.
+* As a user, after an error message I want to be able to write again the numbers without closing and reopening the app again.
+* As a user, I would like to receive a message in green color that the spreadsheets have updated successfully.
 
 ### Features Planned
 
-* To add an resut for the whole year
+* To add an result for the whole year
 * To add more designs for this app so that the user can choose witch one he likes.
 * To add a dark or light mode  
 
@@ -34,7 +34,7 @@ This project was created in order for small businesses to easily keep track of t
 USER STORY
 
 `
-As a User, I would like to be able to manage my store so that I can easily keep track of what clothes have been selled.
+As a User, I would like to be able to manage my store so that I can easily keep track of what clothes have been sold.
 `
 
 IMPLEMENTATION
@@ -49,31 +49,31 @@ As a User, I would like to have an error message in red color if I have made an 
 
 IMPLEMENTATION
 
-When the user don't write enough numbers, separated bu commas or if he will write a letter, or didnt choose a number from the menu, the app will give him an error message in red colour so that the user could see better that there is a problem.
+When the user don't write enough numbers, separated bu commas or if he will write a letter, or didn't choose a number from the menu, the app will give him an error message in red color so that the user could see better that there is a problem.
 
 ![Error message](documents/error.png)
 
 USER STORY
 
 `
-As a user, after an error message I want to be able to write again the numbers without closeing and reopening the app again.
+As a user, after an error message I want to be able to write again the numbers without closing and reopening the app again.
 `
 
 IMPLEMENTATION
 
-When the user will receive an error message , he can start again to write the numbers and he dont need to start the app again or to refresh the app.
+When the user will receive an error message , he can start again to write the numbers and he don't need to start the app again or to refresh the app.
 
 ![sales data](documents/sales-data-again.png)
 
 USER STORY
 
 `
-As a user, I would like to receive a message in green colour that the spreadsheets have updated succesfully.
+As a user, I would like to receive a message in green color that the spreadsheets have updated successfully.
 `
 
 IMPLEMENTATION
 
-After the user added the sales numbers the user will see a green message for every spreadsheet that have been successfuly updated.
+After the user added the sales numbers the user will see a green message for every spreadsheet that have been successfully updated.
 
 ![green message](documents/green-messages.png)
 
@@ -90,7 +90,7 @@ After the user added the sales numbers the user will see a green message for eve
 
 * Google Spreadsheets
 
-* Ezgif.com - I have used this to covert the video into gif
+* ezgif.com - I have used this to covert the video into gif
 
 ## Testing
 
@@ -98,7 +98,7 @@ After the user added the sales numbers the user will see a green message for eve
 
 Below are the test execution of positive functional tests:
 
-When the user will acces the app, he will have some welcome message and after the welcome message will be a menu with 4 options.
+When the user will access the app, he will have some welcome message and after the welcome message will be a menu with 4 options.
 ![Welcome message](documents/welcome-message.png)
  First option is for instructions. After the instructions the user will have to choose again if he want to add sales data or to see the menu again.
  ![Instructions](documents/instructions.png)
@@ -109,9 +109,9 @@ When the user will choose one of this 3 options, he will be able to see a table 
 Under the table the menu will appear again.
 ![Menu again](documents/menu-again.png)
 
-If the user will choose the third option from the menu, he wull be able to add sales data.
+If the user will choose the third option from the menu, he will be able to add sales data.
 ![Add sales data](documents/ad-data.png)
-When the user add sales data will be informed that everything eas succesfully updated.
+When the user add sales data will be informed that everything eas successfully updated.
 ![Updated](documents/succesfully-updated.png)
 
 After the update the menu will appear again.

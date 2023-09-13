@@ -98,7 +98,7 @@ def calc_warehouse_data(sales_row):
 
 def last_5_entries_sales():
     """
-    Collects collumns of data from sales worksheet, collecting
+    Collects columns of data from sales worksheet, collecting
     the last 5 entries for each coat and returns the data
     as a list of lists.
     """
@@ -144,6 +144,9 @@ def run_sales_data():
 
 # Welcome message 
 def welcome_message():
+    """
+    Welcome message for the user
+    """
     result = pyfiglet.figlet_format("NewYork  Fashion Store", justify="center")
     print(result)
     print(colorama.Fore.YELLOW + "Welcome to NewYork-Fashion Data Automation")
@@ -152,6 +155,9 @@ def welcome_message():
 # Here its the menu for the app
 
 def main_menu():
+    """
+    Creating the menu for the app
+    """
     print("---------------")
     print("PLEASE PICK AN OPTION:")
     print()
@@ -180,15 +186,23 @@ def main_menu():
         print(colorama.Style.RESET_ALL)
         main_menu()
 
+#Instructions of the app so that the user know how to use it
+
 def instr():
+    """
+    Instructions for the user to know how to use the app
+    """
     print("INSTRUCTIONS:")
     print()
     print("From the main, if you want to view a data, you can input sales, warehouse or store")
     print("and it will show the values for each area. To add sales data for the past 7 days,")
     print("select 3 from the menu and put your sales figures in for each date, followed by a comma.\n")
 
+#Function for user so that the user can see which sheet he wants
 def view_data():
-    
+    """
+    Creating view_data function so that the user can see which sheet he wants
+    """
     print("Please Pick An Option: ")
     print("1. Sales Data")
     print("2. Warehouse Data")
@@ -224,12 +238,19 @@ def view_data():
         print(colorama.Fore.RED +"Invalid choice. Enter 1-3\n")
         print(colorama.Style.RESET_ALL)
         view_data()
-        
+
+#If user will choose option 3 will be able to add sales data       
 def add_sales():   
+    """
+    Calling functions so that the user could add sales data
+    """
     run_sales_data()
     main_menu()
 
 def main():
+    """
+    Creating user input so that user could choose again
+    """
     welcome_message()
     main_menu()
   
